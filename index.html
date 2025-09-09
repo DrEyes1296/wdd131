@@ -7,6 +7,7 @@
     <title>WDD 131 - Dynamic Web Fundamentals - Edson Reyes</title>
     <meta name="description" content="WDD 131 - Dynamic Web Fundamentals - Edson Reyes. This page is our course landing page for this class.">
     <meta name="author" content="Edson Reyes">
+    <link rel="stylesheet" href="styles/base.css">
 </head>
 
 <body>
@@ -22,24 +23,34 @@
 
     <main>
         <h1>Edson D. Reyes</h1>
-        <section class="card">
-            <h2>About Me</h2>
-            <p>My name is Edson Reyes. I was born and raised in Massacusetts, USA. I am currently living in Salt Lake City, Utah. I love to spend time with my wife and 1 year old baby.</p>
-            <p>Boston, Massachusetts, a city rich with American history and culture. From walking the Freedom Trail to visiting Fenway Park, I love the city's unique blend of historic architecture and modern innovation.</p>
-            <img src="images/daniel_profile.jpg" alt="A photo of me, Edson Reyes"> 
-            <img src="images/boston_skyline.jpg" alt="Boston's Skyline">
-        </section>
-
-        <section class="card">
-            <h2>Web Dev Resources</h2>
-            <ul>
-                <li><a href="https://dev.to/">DEV.to Community</a></li>
-                <li><a href="https://www.smashingmagazine.com/">Smashing Magazine</a></li>
-                <li><a href="https://css-tricks.com/">CSS Tricks</a></li>
-                <li><a href="https://www.w3schools.com/">W3 Schools</a></li>
-                <li><a href="https://www.udemy.com/">Udemy</a></li>
-            </ul>
-        </section>
+        <div class="card-container">
+            <section class="card about-me-card">
+                <h2>About Me</h2>
+                <div class="about-section">
+                    <div class="text">
+                        <p>My name is Edson Reyes. I was born and raised in Massachusetts, USA. I am currently living in Salt Lake City, Utah. I love to spend time with my wife and 1 year old baby.</p>
+                    </div>
+                    <img class="profile-pic" src="images/daniel_profile.jpg" alt="A photo of me, Edson Reyes">
+                </div>
+                <div class="about-section">
+                    <div class="text">
+                        <p>Boston, Massachusetts, a city rich with American history and culture. From walking the Freedom Trail to visiting Fenway Park, I love the city's unique blend of historic architecture and modern innovation.</p>
+                    </div>
+                    <img class="skyline-pic" src="images/boston_skyline.jpg" alt="Boston's Skyline">
+                </div>
+            </section>
+    
+            <section class="card">
+                <h2>Web Dev Resources</h2>
+                <ul>
+                    <li><a href="https://dev.to/">DEV.to Community</a></li>
+                    <li><a href="https://www.smashingmagazine.com/">Smashing Magazine</a></li>
+                    <li><a href="https://css-tricks.com/">CSS Tricks</a></li>
+                    <li><a href="https://www.w3schools.com/">W3 Schools</a></li>
+                    <li><a href="https://www.udemy.com/">Udemy</a></li>
+                </ul>
+            </section>
+        </div>
     </main>    
 
     <footer>

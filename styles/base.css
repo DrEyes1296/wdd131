@@ -1,114 +1,136 @@
 /* --- Google Fonts Import --- */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
-/* --- CSS Variables for easy theme management --- */
+/* --- CSS Variables --- */
 :root {
-    --primary-color: #003366; /* A deep blue */
-    --secondary-color: #f4f4f9; /* Light grey background */
-    --accent-color: #007BFF; /* A brighter blue for links and highlights */
-    --text-color: #333333; /* Dark grey for text */
-    --card-background: #ffffff; /* White for cards */
-    --heading-font: 'Merriweather', serif;
-    --body-font: 'Roboto', sans-serif;
+    --primary-color: #0d47a1;
+    --background-color: #f0f2f5;
+    --text-color: #333333;
+    --card-border-color: #ccc;
+    --header-font: 'Lato', sans-serif;
+    --body-font: 'Lato', sans-serif;
 }
 
 /* --- Basic Body and Page Styling --- */
 body {
     font-family: var(--body-font);
-    background-color: var(--secondary-color);
+    background-color: var(--background-color);
     color: var(--text-color);
     margin: 0;
     padding: 0;
     font-size: 16px;
-    line-height: 1.6;
 }
 
 /* --- Header Styling --- */
 header {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: white;
     padding: 1rem;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-bottom: 1px solid var(--card-border-color);
 }
 
 #course-title {
-    display: block; /* Makes the span behave like a block element */
-    font-family: var(--heading-font);
+    display: block;
+    font-family: var(--header-font);
     font-size: 1.8rem;
-    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-weight: 700;
 }
 
-/* --- Navigation Styling using Flexbox --- */
+/* --- Navigation Bar Styling --- */
 nav {
+    background-color: var(--primary-color);
     display: flex;
-    justify-content: center; /* Centers the navigation items */
-    gap: 1.5rem; /* Adds space between links */
+    justify-content: space-around;
+    padding: 0.75rem 0;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.2);
     text-decoration: underline;
+    border-radius: 4px;
 }
 
 /* --- Main Content Styling --- */
 main {
-    max-width: 960px; /* Limits the width of the main content */
-    margin: 2rem auto; /* Centers the main content horizontally */
+    max-width: 1200px;
+    margin: 2rem auto;
     padding: 0 1rem;
 }
 
-main h1 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
+main > h1 {
+    font-family: var(--header-font);
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--text-color);
     text-align: center;
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
 }
 
 /* --- Grid Layout for Cards --- */
 .card-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Creates a two-column layout */
-    gap: 1.5rem; /* Space between the cards */
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
 }
 
 .card {
-    background-color: var(--card-background);
+    background-color: white;
+    border: 1px solid var(--card-border-color);
     border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     padding: 1.5rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .card h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
     margin-top: 0;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--background-color);
+    padding-bottom: 0.5rem;
 }
 
-.card img {
-    max-width: 100%;
+/* --- NEW "ABOUT ME" CARD LAYOUT --- */
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.about-section .text {
+    flex: 1; /* Allows text to take up available space */
+}
+
+.profile-pic, .skyline-pic {
+    width: 120px; /* Controls image width */
     height: auto;
-    border-radius: 5px;
-    margin-top: 1rem;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
+/* --- Resources Card List --- */
 .card ul {
     list-style-type: none;
-    padding: 0;
+    padding-left: 0;
+    margin: 0;
+}
+
+.card ul li {
+    padding: 0.5rem 0;
 }
 
 .card ul li a {
-    color: var(--accent-color);
+    color: var(--primary-color);
     text-decoration: none;
+    font-weight: bold;
 }
 
 .card ul li a:hover {
@@ -120,23 +142,28 @@ footer {
     background-color: var(--primary-color);
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem;
     margin-top: 2rem;
 }
 
 footer p {
-    margin: 0;
+    margin: 0.25rem 0;
 }
 
 /* --- Media Query for Responsiveness --- */
-/* On screens smaller than 768px, the grid will stack to a single column */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .card-container {
-        grid-template-columns: 1fr; /* Single column layout */
+        grid-template-columns: 1fr;
     }
+}
 
+@media (max-width: 600px) {
+    .about-section {
+        flex-direction: column-reverse; /* Stacks image above text on small screens */
+    }
     nav {
-        flex-direction: column; /* Stack navigation links vertically */
+        flex-direction: column;
         gap: 0.5rem;
+        padding: 0.5rem;
     }
 }
