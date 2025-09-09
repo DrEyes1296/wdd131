@@ -1,0 +1,142 @@
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@700&display=swap');
+
+/* --- CSS Variables for easy theme management --- */
+:root {
+    --primary-color: #003366; /* A deep blue */
+    --secondary-color: #f4f4f9; /* Light grey background */
+    --accent-color: #007BFF; /* A brighter blue for links and highlights */
+    --text-color: #333333; /* Dark grey for text */
+    --card-background: #ffffff; /* White for cards */
+    --heading-font: 'Merriweather', serif;
+    --body-font: 'Roboto', sans-serif;
+}
+
+/* --- Basic Body and Page Styling --- */
+body {
+    font-family: var(--body-font);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* --- Header Styling --- */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#course-title {
+    display: block; /* Makes the span behave like a block element */
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* --- Navigation Styling using Flexbox --- */
+nav {
+    display: flex;
+    justify-content: center; /* Centers the navigation items */
+    gap: 1.5rem; /* Adds space between links */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* --- Main Content Styling --- */
+main {
+    max-width: 960px; /* Limits the width of the main content */
+    margin: 2rem auto; /* Centers the main content horizontally */
+    padding: 0 1rem;
+}
+
+main h1 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    text-align: center;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+}
+
+/* --- Grid Layout for Cards --- */
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates a two-column layout */
+    gap: 1.5rem; /* Space between the cards */
+}
+
+.card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.card ul li a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.card ul li a:hover {
+    text-decoration: underline;
+}
+
+/* --- Footer Styling --- */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* --- Media Query for Responsiveness --- */
+/* On screens smaller than 768px, the grid will stack to a single column */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    nav {
+        flex-direction: column; /* Stack navigation links vertically */
+        gap: 0.5rem;
+    }
+}
