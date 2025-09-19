@@ -6,17 +6,18 @@
 }
 
 body {
-    font-family: 'Lora', serif;
-    background-color: #FDFDFF;
-    color: #2C3E50;
+    font-family: 'Montserrat', sans-serif; /* Fun new body font */
+    background-color: #f0f8ff; /* Light alice blue background */
+    color: #333;
 }
 
 /* --- Header and Footer Styles --- */
 header, footer {
-    background-color: #AEC6CF;
+    background-color: #0077be; /* Vibrant but clean blue */
     color: white;
     text-align: center;
     padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 header {
@@ -26,7 +27,8 @@ header {
 }
 
 header h1, main h2 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Pacifico', cursive; /* Fun new heading font */
+    font-weight: normal;
 }
 
 footer {
@@ -45,7 +47,6 @@ footer {
     right: 1rem;
 }
 
-/* Hamburger and Close Icon states */
 #menu::before {
     content: "☰";
 }
@@ -56,17 +57,17 @@ footer {
 
 .navigation {
     list-style: none;
-    display: none; /* Hidden by default */
+    display: none;
     flex-direction: column;
-    background-color: #AEC6CF; /* Background for dropdown */
+    background-color: #0077be; /* Match header */
     position: absolute;
-    top: 60px; /* Position below header */
+    top: 65px; /* Adjusted for header padding */
     left: 0;
     width: 100%;
 }
 
 .navigation.open {
-    display: flex; /* Shown when toggled */
+    display: flex;
 }
 
 .navigation li {
@@ -79,11 +80,12 @@ footer {
     text-align: center;
     text-decoration: none;
     color: white;
+    transition: background-color 0.3s;
 }
 
 .navigation a:hover {
-    background-color: #E8ADAA;
-    color: #2C3E50;
+    background-color: #005fa3; /* A slightly darker blue for hover */
+    color: #fff;
 }
 
 /* --- Main Content and Gallery Styles --- */
@@ -96,31 +98,40 @@ main {
 main h2 {
     text-align: center;
     margin-bottom: 1.5rem;
-    color: #2C3E50;
+    color: #005fa3;
+    font-size: 2.5rem;
 }
 
 .gallery {
     display: grid;
-    grid-template-columns: 1fr; /* Single column for mobile */
-    gap: 1rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* A bit more space */
 }
 
 .gallery figure {
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 8px; /* Softer corners */
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
 .gallery img {
     width: 100%;
-    height: auto;
+    height: 200px; /* Give all images a fixed height */
+    object-fit: cover; /* This makes the images cover the area without distortion */
     display: block;
 }
 
 .gallery figcaption {
     text-align: center;
-    padding: 0.75rem;
+    padding: 1rem;
     background-color: #f9f9f9;
+    flex-grow: 1; /* Allows figcaption to fill remaining space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
 }

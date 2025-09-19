@@ -17,67 +17,78 @@ menuButton.addEventListener('click', () => {
 
 
 // --- 3. TEMPLE FILTERING LOGIC ---
-// This now selects the temples directly from your HTML file
-const temples = document.querySelectorAll('.gallery figure');
 const pageHeading = document.querySelector('main h2');
+const galleryFigures = document.querySelectorAll('.gallery figure');
 
-// Add data attributes to your HTML for filtering
-// This makes it easier to get the data for each temple
-temples.forEach(temple => {
-    const figcaption = temple.querySelector('figcaption').textContent;
-    if (figcaption.includes('Logan') || figcaption.includes('St. George')) {
-        temple.dataset.era = 'old';
-    } else {
-        temple.dataset.era = 'new';
-    }
+// Function to display a filtered set of temples
+const displayTemples = (templeList, headingText) => {
+    galleryFigures.forEach(figure => {
+        // Get the caption text from the <figcaption> element
+        const figcaptionText = figure.querySelector('figcaption').textContent;
 
-    if (figcaption.includes('Washington') || figcaption.includes('Los Angeles') || figcaption.includes('Hamilton')) {
-        temple.dataset.size = 'large';
-    } else {
-        temple.dataset.size = 'small';
-    }
-});
-
-const displayFilteredTemples = (filterType, filterValue, heading) => {
-    pageHeading.textContent = heading;
-    temples.forEach(temple => {
-        if (temple.dataset[filterType] === filterValue) {
-            temple.style.display = 'block';
+        // If the caption text is in our list, show the figure, otherwise hide it
+        if (templeList.includes(figcaptionText)) {
+            figure.style.display = 'flex'; // Use 'flex' to match our CSS
         } else {
-            temple.style.display = 'none';
+            figure.style.display = 'none';
         }
     });
+    // Update the main heading
+    pageHeading.textContent = headingText;
 };
 
-const displayAllTemples = () => {
-    pageHeading.textContent = 'Home';
-    temples.forEach(temple => {
-        temple.style.display = 'block';
+// Function to show all temples for the "Home" link
+const showAllTemples = () => {
+    galleryFigures.forEach(figure => {
+        figure.style.display = 'flex'; // Use 'flex' to match our CSS
     });
+    pageHeading.textContent = 'Home';
 };
 
-// Event Listeners for filtering
+// Arrays for each category based on the exact text in your HTML's <figcaption>
+const oldTemples = [
+    "Logan Utah Temple",
+    "St. George Utah Temple"
+];
+
+const newTemples = [
+    "Brasília Brazil Temple",
+    "Miraflores Guatemala City Guatemala Temple"
+];
+
+const largeTemples = [
+    "Washington D.C. Temple",
+    "Los Angeles California Temple",
+    "Hamilton New Zealand Temple"
+];
+
+const smallTemples = [
+    "Taipei Taiwan Temple",
+    "Colonia Juarez Chihuahua Mexico Temple"
+];
+
+// Add event listeners to navigation links
 document.querySelector('#nav-home').addEventListener('click', (e) => {
-    e.preventDefault();
-    displayAllTemples();
+    e.preventDefault(); // Prevent the link from trying to navigate
+    showAllTemples();
 });
 
 document.querySelector('#nav-old').addEventListener('click', (e) => {
     e.preventDefault();
-    displayFilteredTemples('era', 'old', 'Old Temples');
+    displayTemples(oldTemples, 'Old Temples');
 });
 
 document.querySelector('#nav-new').addEventListener('click', (e) => {
     e.preventDefault();
-    displayFilteredTemples('era', 'new', 'New Temples');
+    displayTemples(newTemples, 'New Temples');
 });
 
 document.querySelector('#nav-large').addEventListener('click', (e) => {
     e.preventDefault();
-    displayFilteredTemples('size', 'large', 'Large Temples');
+    displayTemples(largeTemples, 'Large Temples');
 });
 
 document.querySelector('#nav-small').addEventListener('click', (e) => {
     e.preventDefault();
-    displayFilteredTemples('size', 'small', 'Small Temples');
+    displayTemples(smallTemples, 'Small Temples');
 });
