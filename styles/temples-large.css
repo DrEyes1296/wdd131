@@ -1,0 +1,30 @@
+/* Media query for screens wider than 640px */
+@media (min-width: 640px) {
+
+    /* --- Large Screen Navigation Styles --- */
+    #menu {
+        display: none; /* Hide hamburger button */
+    }
+
+    .navigation {
+        display: flex;
+        position: static; /* Reset position */
+        flex-direction: row;
+        width: auto;
+        background-color: transparent;
+    }
+
+    .navigation li {
+        width: auto;
+    }
+
+    .navigation a {
+        padding: 0.5rem 1rem;
+    }
+
+    /* --- Large Screen Gallery Styles --- */
+    .gallery {
+        /* A responsive grid with a minimum item width of 280px */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}

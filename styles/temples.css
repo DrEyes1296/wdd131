@@ -1,0 +1,126 @@
+/* --- Universal and Body Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif;
+    background-color: #FDFDFF;
+    color: #2C3E50;
+}
+
+/* --- Header and Footer Styles --- */
+header, footer {
+    background-color: #AEC6CF;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1, main h2 {
+    font-family: 'Poppins', sans-serif;
+}
+
+footer {
+    margin-top: 2rem;
+}
+
+/* --- Mobile Navigation Styles --- */
+#menu {
+	font-size: 1.5rem;
+	border: 0;
+	background: none;
+	color: #fff;
+	cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+/* Hamburger and Close Icon states */
+#menu::before {
+	content: "☰";
+}
+
+#menu.open::before {
+	content: "X";
+}
+
+.navigation {
+	list-style: none;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    background-color: #AEC6CF; /* Background for dropdown */
+    position: absolute;
+    top: 60px; /* Position below header */
+    left: 0;
+    width: 100%;
+}
+
+.navigation.open {
+    display: flex; /* Shown when toggled */
+}
+
+.navigation li {
+    width: 100%;
+}
+
+.navigation a {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.navigation a:hover {
+    background-color: #E8ADAA;
+    color: #2C3E50;
+}
+
+/* --- Main Content and Gallery Styles --- */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+main h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2C3E50;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 1rem;
+}
+
+.gallery figure {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery figcaption {
+    text-align: center;
+    padding: 0.75rem;
+    background-color: #f9f9f9;
+}
