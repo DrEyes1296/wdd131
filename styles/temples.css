@@ -1,4 +1,3 @@
-/* --- Universal and Body Styles --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,14 +5,14 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif; /* Fun new body font */
-    background-color: #f0f8ff; /* Light alice blue background */
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f8ff; 
     color: #333;
 }
 
 /* --- Header and Footer Styles --- */
 header, footer {
-    background-color: #0077be; /* Vibrant but clean blue */
+    background-color: #0077be; 
     color: white;
     text-align: center;
     padding: 1rem;
@@ -27,7 +26,7 @@ header {
 }
 
 header h1, main h2 {
-    font-family: 'Pacifico', cursive; /* Fun new heading font */
+    font-family: 'Pacifico', cursive;
     font-weight: normal;
 }
 
@@ -59,9 +58,9 @@ footer {
     list-style: none;
     display: none;
     flex-direction: column;
-    background-color: #0077be; /* Match header */
+    background-color: #0077be;
     position: absolute;
-    top: 65px; /* Adjusted for header padding */
+    top: 65px; 
     left: 0;
     width: 100%;
 }
@@ -84,7 +83,7 @@ footer {
 }
 
 .navigation a:hover {
-    background-color: #005fa3; /* A slightly darker blue for hover */
+    background-color: #005fa3;
     color: #fff;
 }
 
@@ -105,14 +104,14 @@ main h2 {
 .gallery {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem; /* A bit more space */
+    gap: 1.5rem;
 }
 
 .gallery figure {
     border: 1px solid #ddd;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     overflow: hidden;
-    border-radius: 8px; /* Softer corners */
+    border-radius: 8px; 
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -120,8 +119,8 @@ main h2 {
 
 .gallery img {
     width: 100%;
-    height: 200px; /* Give all images a fixed height */
-    object-fit: cover; /* This makes the images cover the area without distortion */
+    height: 200px;
+    object-fit: cover; 
     display: block;
 }
 
@@ -129,7 +128,7 @@ main h2 {
     text-align: center;
     padding: 1rem;
     background-color: #f9f9f9;
-    flex-grow: 1; /* Allows figcaption to fill remaining space */
+    flex-grow: 1; 
     display: flex;
     align-items: center;
     justify-content: center;
