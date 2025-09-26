@@ -1,4 +1,3 @@
-// Set footer information
 const currentYearSpan = document.getElementById('currentyear');
 const lastModifiedSpan = document.getElementById('lastModified');
 

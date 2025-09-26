@@ -1,4 +1,3 @@
-/* Global CSS Variables */
 :root {
     --primary-color: #D4AF37; /* Pharaoh Gold */
     --secondary-color: #6A451D; /* Deep Earthy Brown */
@@ -32,31 +31,30 @@ header {
 }
 
 header h1 {
-    color: var(--primary-color); /* Gold title */
+    color: var(--primary-color); 
     margin: 0;
 }
 
 main {
-    flex: 1; /* Allows main content to grow and push footer down */
+    flex: 1;
     padding: 1rem;
-    max-width: 1200px; /* Constrain main content width */
-    margin: 0 auto; /* Center main content */
+    max-width: 1200px; 
+    margin: 0 auto; 
 }
 
 /* Hero Image Styling */
 .hero {
     margin-bottom: 1.5rem;
-    overflow: hidden; /* Ensure image doesn't overflow container */
-    border-radius: 8px; /* Consistent rounded corners */
+    overflow: hidden;
+    border-radius: 8px;
 }
 .hero img {
     width: 100%;
-    height: 250px; /* Fixed height to enforce horizontal look on smaller screens */
-    object-fit: cover; /* Covers the area, cropping as needed */
+    height: 250px;
+    object-fit: cover;
     display: block;
 }
 
-/* Card Styling for Data and Weather */
 .card {
     background-color: var(--card-background);
     border: 1px solid #ddd;
@@ -75,7 +73,6 @@ main {
     font-size: 2rem;
 }
 
-/* Data Section Specifics (Description List) */
 .data dl {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -88,14 +85,14 @@ main {
     color: var(--secondary-color);
 }
 
-/* Weather Section Specifics */
+
 .weather ul {
     list-style: none;
     padding: 0;
     font-size: 1.1rem;
-    display: flex; /* ADDED */
-    flex-direction: column; /* ADDED */
-    gap: 0.8rem; /* ADDED to match data section spacing */
+    display: flex;
+    flex-direction: column; 
+    gap: 0.8rem; 
 }
 
 .weather-icon-mobile {
@@ -114,12 +111,10 @@ footer {
     border-top: 2px solid var(--primary-color);
 }
 
-/* ---------------------------------- */
-/* MEDIA QUERY FOR WIDER SCREENS      */
-/* ---------------------------------- */
+
 @media (min-width: 700px) {
     .hero img {
-        height: 350px; /* Taller on wider screens, still horizontal */
+        height: 350px; 
     }
 
     .content-grid {
