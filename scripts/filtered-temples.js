@@ -100,6 +100,7 @@ const temples = [
   }
 ];
 
+
 const gallery = document.querySelector(".gallery");
 const pageHeading = document.querySelector("main h2");
 
@@ -135,45 +136,49 @@ function createTempleCard(temple) {
 function displayTemples(templeList) {
     gallery.innerHTML = "";
     templeList.forEach(temple => {
-        
         const card = createTempleCard(temple);
         gallery.appendChild(card);
     });
 }
 
 // --- Navigation Event Listeners ---
-document.querySelector("#nav-home").addEventListener("click", () => {
+document.querySelector("#nav-home").addEventListener("click", (event) => {
+    event.preventDefault(); // --- ADDED THIS LINE ---
     pageHeading.textContent = "Home";
     displayTemples(temples);
-    closeMenu(); // Close menu on mobile
+    closeMenu();
 });
 
-document.querySelector("#nav-old").addEventListener("click", () => {
+document.querySelector("#nav-old").addEventListener("click", (event) => {
+    event.preventDefault(); // --- ADDED THIS LINE ---
     pageHeading.textContent = "Old Temples";
     const oldTemples = temples.filter(temple => new Date(temple.dedicated).getFullYear() < 1900);
     displayTemples(oldTemples);
-    closeMenu(); // Close menu on mobile
+    closeMenu();
 });
 
-document.querySelector("#nav-new").addEventListener("click", () => {
+document.querySelector("#nav-new").addEventListener("click", (event) => {
+    event.preventDefault(); // --- ADDED THIS LINE ---
     pageHeading.textContent = "New Temples";
     const newTemples = temples.filter(temple => new Date(temple.dedicated).getFullYear() > 2000);
     displayTemples(newTemples);
-    closeMenu(); // Close menu on mobile
+    closeMenu();
 });
 
-document.querySelector("#nav-large").addEventListener("click", () => {
+document.querySelector("#nav-large").addEventListener("click", (event) => {
+    event.preventDefault(); // --- ADDED THIS LINE ---
     pageHeading.textContent = "Large Temples";
     const largeTemples = temples.filter(temple => temple.area > 90000);
     displayTemples(largeTemples);
-    closeMenu(); // Close menu on mobile
+    closeMenu();
 });
 
-document.querySelector("#nav-small").addEventListener("click", () => {
+document.querySelector("#nav-small").addEventListener("click", (event) => {
+    event.preventDefault(); // --- ADDED THIS LINE ---
     pageHeading.textContent = "Small Temples";
     const smallTemples = temples.filter(temple => temple.area < 10000);
     displayTemples(smallTemples);
-    closeMenu(); // Close menu on mobile
+    closeMenu();
 });
 
 // Display all temples when the page first loads.
