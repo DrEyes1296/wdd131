@@ -13,6 +13,12 @@ menuButton.addEventListener('click', () => {
     menuButton.classList.toggle('open');
 });
 
+// A function to close the mobile menu
+function closeMenu() {
+    navigation.classList.remove('open');
+    menuButton.classList.remove('open');
+}
+
 // --- Temple Data ---
 const temples = [
   {
@@ -65,11 +71,11 @@ const temples = [
     imageUrl: "images/mexico-city-mexico.jpg"
   },
   {
-    templeName: "Frankfurt Germany",
-    location: "Friedrichsdorf, Germany",
-    dedicated: "1987, August, 28",
-    area: 24170,
-    imageUrl: "images/frankfurt-germany.jpg"
+    templeName: "Salt Lake",
+    location: "Salt Lake City, Utah, United States",
+    dedicated: "1893, April, 6",
+    area: 253015,
+    imageUrl: "images/salt-lake.jpg"
   },
   {
     templeName: "The Hague Netherlands",
@@ -84,9 +90,15 @@ const temples = [
     dedicated: "2016, August, 21",
     area: 48485,
     imageUrl: "images/sapporo-japan.jpg"
+  },
+  {
+    templeName: "Frankfurt Germany",
+    location: "Friedrichsdorf, Germany",
+    dedicated: "1987, August, 28",
+    area: 24170,
+    imageUrl: "images/frankfurt-germany.jpg"
   }
 ];
-
 
 const gallery = document.querySelector(".gallery");
 const pageHeading = document.querySelector("main h2");
@@ -123,6 +135,7 @@ function createTempleCard(temple) {
 function displayTemples(templeList) {
     gallery.innerHTML = "";
     templeList.forEach(temple => {
+        
         const card = createTempleCard(temple);
         gallery.appendChild(card);
     });
@@ -132,30 +145,35 @@ function displayTemples(templeList) {
 document.querySelector("#nav-home").addEventListener("click", () => {
     pageHeading.textContent = "Home";
     displayTemples(temples);
+    closeMenu(); // Close menu on mobile
 });
 
 document.querySelector("#nav-old").addEventListener("click", () => {
     pageHeading.textContent = "Old Temples";
     const oldTemples = temples.filter(temple => new Date(temple.dedicated).getFullYear() < 1900);
     displayTemples(oldTemples);
+    closeMenu(); // Close menu on mobile
 });
 
 document.querySelector("#nav-new").addEventListener("click", () => {
     pageHeading.textContent = "New Temples";
     const newTemples = temples.filter(temple => new Date(temple.dedicated).getFullYear() > 2000);
     displayTemples(newTemples);
+    closeMenu(); // Close menu on mobile
 });
 
 document.querySelector("#nav-large").addEventListener("click", () => {
     pageHeading.textContent = "Large Temples";
     const largeTemples = temples.filter(temple => temple.area > 90000);
     displayTemples(largeTemples);
+    closeMenu(); // Close menu on mobile
 });
 
 document.querySelector("#nav-small").addEventListener("click", () => {
     pageHeading.textContent = "Small Temples";
     const smallTemples = temples.filter(temple => temple.area < 10000);
     displayTemples(smallTemples);
+    closeMenu(); // Close menu on mobile
 });
 
 // Display all temples when the page first loads.
