@@ -1,57 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Egypt - WDD 131 Country Page</title>
-<meta name="description" content="A summary page about Egypt, covering its geography, demographics, and weather for a WDD 131 class project.">
-<meta name="author" content="Edson Reyes">
-<link rel="stylesheet" href="styles/place.css">
-<script src="scripts/place.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egypt - WDD 131 Country Page</title>
+    <meta name="description" content="A summary page about Egypt, covering its geography, demographics, and weather for a WDD 131 class project.">
+    <meta name="author" content="Edson Reyes">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
 </head>
 <body>
-<header>
-<h1>Egypt</h1>
-</header>
-<main>
-<div class="hero">
-<picture>
-<source srcset="images/egypt-large.webp" media="(min-width: 700px)">
-<img src="images/egypt-small.webp" alt="Scenery of Egypt">
-</picture>
-</div>
-<div class="content-grid">
-<section class="card data">
-<h2>Data</h2>
-<dl>
-<dt>Area:</dt>
-<dd>1,010,408 km²</dd>
-<dt>Population:</dt>
-<dd>111 Million</dd>
-<dt>Capital:</dt>
-<dd>Cairo</dd>
-<dt>Language:</dt>
-<dd>Arabic</dd>
-<dt>Currency:</dt>
-<dd>Egyptian Pound (EGP)</dd>
-<dt>Time Zone:</dt>
-<dd>UTC+2 (EET)</dd>
-</dl>
-</section>
-<section class="card weather">
-<h2>Weather <img src="images/weather-icon.svg" alt="Weather Icon" class="weather-icon-mobile"></h2>
-<ul>
-<li>Temperature: <span id="temp">32</span>°C</li>
-<li>Conditions: Sunny</li>
-<li>Wind Speed: <span id="windspeed">15</span> km/h</li>
-<li>Wind Chill: <span id="windchill"></span></li>
-</ul>
-</section>
-</div>
-</main>
-<footer>
-<p>&copy;<span id="currentyear"></span> Edson Reyes - Egypt</p>
-<p>Last Modification: <span id="lastModified"></span></p>
-</footer>
+    <header>
+        <h1>Egypt</h1>
+    </header>
+    <main>
+        <div class="hero">
+            <picture>
+                <source srcset="images/egypt-large.webp" media="(min-width: 700px)">
+                <img src="images/egypt-small.webp" alt="Scenery of Egypt">
+            </picture>
+        </div>
+        <div class="content-grid">
+            <section class="card data">
+                <h2>Data</h2>
+                <dl>
+                    <dt>Area:</dt>
+                    <dd>1,010,408 km²</dd>
+                    <dt>Population:</dt>
+                    <dd>111 Million</dd>
+                    <dt>Capital:</dt>
+                    <dd>Cairo</dd>
+                    <dt>Language:</dt>
+                    <dd>Arabic</dd>
+                    <dt>Currency:</dt>
+                    <dd>Egyptian Pound (EGP)</dd>
+                    <dt>Time Zone:</dt>
+                    <dd>UTC+2 (EET)</dd>
+                </dl>
+            </section>
+            <section class="card weather">
+                <h2>Weather <img src="images/weather-icon.svg" alt="Weather Icon" class="weather-icon-mobile"></h2>
+                <ul>
+                    <li>Temperature: <span id="temp">32</span>°C</li>
+                    <li>Conditions: Sunny</li>
+                    <li>Wind Speed: <span id="windspeed">15</span> km/h</li>
+                    <li>Wind Chill: <span id="windchill"></span></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy;<span id="currentyear"></span> Edson Reyes - Egypt</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
 </body>
 </html>

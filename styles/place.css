@@ -1,261 +1,145 @@
 /* Global CSS Variables */
-
 :root {
-
-    --primary-color: #c8102e; /* Red from flag */
-    --secondary-color: #000000; /* Black from flag */
-    --accent-color: #ceb888; /* Sandy Gold */
-    --text-color: #333;
-    --background-color: #fdfaf5; /* Light cream background */
+    --primary-color: #D4AF37; /* Pharaoh Gold */
+    --secondary-color: #6A451D; /* Deep Earthy Brown */
+    --accent-color: #B5651D; /* Rusty Orange/Brown */
+    --text-color: #3d2b1f; /* Dark Taupe */
+    --background-color: #F8F4E3; /* Light Sandy Yellow */
     --card-background: #ffffff;
-    
-    }
-    
-    
-    
-    /* General Body Styling */
-    
-    body {
-    
-    font-family: 'Georgia', serif;
-    
+    --header-footer-bg: #8B4513; /* Saddle Brown */
+}
+
+/* General Body Styling */
+body {
+    font-family: 'Montserrat', sans-serif;
     background-color: var(--background-color);
-    
     color: var(--text-color);
-    
     margin: 0;
-    
     padding: 0;
-    
     display: flex;
-    
     flex-direction: column;
-    
     min-height: 100vh;
-    
-    }
-    
-    
-    
-    header {
-    
-    background-color: var(--primary-color);
-    
-    color: white;
-    
+}
+
+header {
+    background-color: var(--header-footer-bg);
     text-align: center;
-    
-    padding: 1rem 0;
-    
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
-    }
-    
-    
-    
-    main {
-    
-    flex: 1;
-    
-    padding: 1rem;
-    
-    }
-    
-    
-    
-    /* Hero Image Styling */
-    
-    .hero img {
-    
-    width: 100%;
-    
-    height: auto;
-    
-    display: block;
-    
-    }
-    
-    
-    
-    /* Card Styling for Data and Weather */
-    
-    .card {
-    
-    background-color: var(--card-background);
-    
-    border: 1px solid #ddd;
-    
-    border-radius: 8px;
-    
-    margin-top: 1rem;
-    
-    padding: 1rem;
-    
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    
-    }
-    
-    
-    
-    .card h2 {
-    
-    color: var(--primary-color);
-    
-    border-bottom: 2px solid var(--accent-color);
-    
-    padding-bottom: 0.5rem;
-    
-    margin-top: 0;
-    
-    }
-    
-    
-    
-    /* Data Section Specifics (Description List) */
-    
-    .data dl {
-    
-    display: grid;
-    
-    grid-template-columns: auto 1fr;
-    
-    gap: 0.5rem 1rem;
-    
-    }
-    
-    
-    
-    .data dt {
-    
-    font-weight: bold;
-    
-    color: var(--secondary-color);
-    
-    }
-    
-    
-    
-    /* Weather Section Specifics */
-    
-    .weather ul {
-    
-    list-style: none;
-    
-    padding: 0;
-    
-    }
-    
-    
-    
-    .weather-icon-mobile {
-    
-    display: inline-block; /* Show on mobile */
-    
-    width: 30px;
-    
-    vertical-align: middle;
-    
-    margin-left: 0.5rem;
-    
-    }
-    
-    
-    
-    /* Footer Styling */
-    
-    footer {
-    
-    background-color: var(--secondary-color);
-    
-    color: white;
-    
-    text-align: center;
-    
-    padding: 1rem 0;
-    
-    margin-top: auto;
-    
-    }
-    
-    
-    
-    /* ---------------------------------- */
-    
-    /* MEDIA QUERY FOR WIDER SCREENS */
-    
-    /* ---------------------------------- */
-    
-    @media (min-width: 700px) {
-    
-    main {
-    
-    display: grid;
-    
-    grid-template-columns: 1fr 1fr;
-    
-    grid-template-rows: auto 1fr;
-    
-    gap: 1.5rem;
-    
-    max-width: 1200px;
-    
-    margin: 0 auto;
-    
-    padding: 1.5rem;
-    
-    }
-    
-    
-    
-    .hero {
-    
-    grid-column: 1 / -1; /* Span full width */
-    
-    }
-    
-    
-    .content-grid {
-    
-    grid-column: 1 / -1;
-    
-    display: grid;
-    
-    grid-template-columns: 1fr 1fr;
-    
-    gap: 1.5rem;
-    
-    align-items: start;
-    
-    }
-    
-    
-    
-    .card {
-    
-    margin-top: 0; /* Remove top margin as gap is handled by grid */
-    
-    }
-    
-    
-    
-    .weather-icon-mobile {
-    
-    display: none; /* Hide mobile SVG icon */
-    
-    }
-    
-    
-    
-    /* Pseudo-element for wider view weather icon */
-    
-    .weather h2::after {
-    
-    content: ' ☀️'; /* Add emoji after the h2 text */
-    
+    padding: 1.5rem 0;
+    font-family: 'Oswald', sans-serif;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     font-size: 1.5rem;
-    
+    border-bottom: 2px solid var(--primary-color);
+}
+
+header h1 {
+    color: var(--primary-color); /* Gold title */
+    margin: 0;
+}
+
+main {
+    flex: 1; /* Allows main content to grow and push footer down */
+    padding: 1rem;
+    max-width: 1200px; /* Constrain main content width */
+    margin: 0 auto; /* Center main content */
+}
+
+/* Hero Image Styling */
+.hero {
+    margin-bottom: 1.5rem;
+    overflow: hidden; /* Ensure image doesn't overflow container */
+    border-radius: 8px; /* Consistent rounded corners */
+}
+.hero img {
+    width: 100%;
+    height: 250px; /* Fixed height to enforce horizontal look on smaller screens */
+    object-fit: cover; /* Covers the area, cropping as needed */
+    display: block;
+}
+
+/* Card Styling for Data and Weather */
+.card {
+    background-color: var(--card-background);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-top: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+}
+
+/* Data Section Specifics (Description List) */
+.data dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.8rem 1rem;
+    font-size: 1.1rem;
+}
+
+.data dt {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+/* Weather Section Specifics */
+.weather ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+    display: flex; /* ADDED */
+    flex-direction: column; /* ADDED */
+    gap: 0.8rem; /* ADDED to match data section spacing */
+}
+
+.weather-icon-mobile {
+    display: inline-block;
+    width: 30px;
     vertical-align: middle;
-    
+    margin-left: 0.5rem;
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--header-footer-bg);
+    color: #F8F4E3; /* Lighter text for footer */
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 2px solid var(--primary-color);
+}
+
+/* ---------------------------------- */
+/* MEDIA QUERY FOR WIDER SCREENS      */
+/* ---------------------------------- */
+@media (min-width: 700px) {
+    .hero img {
+        height: 350px; /* Taller on wider screens, still horizontal */
     }
-    
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: start;
     }
+
+    .card {
+        margin-top: 0;
+    }
+
+    .weather-icon-mobile {
+        display: none; /* Hide mobile SVG icon */
+    }
+
+    .weather h2::after {
+        content: ' ☀️';
+        font-size: 2rem;
+        vertical-align: middle;
+    }
+}
