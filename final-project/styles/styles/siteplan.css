@@ -1,0 +1,136 @@
+/* Apply chosen fonts and colors to the planning document */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f9f9f9;
+    color: #333333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #005A9C;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #005A9C;
+}
+
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+section {
+    border-bottom: 1px solid #eeeeee;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+ol li {
+    margin-bottom: 10px;
+}
+
+/* Color Schema Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.color-swatch {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.color-swatch.primary { background-color: #005A9C; }
+.color-swatch.accent { background-color: #FDB813; }
+.color-swatch.dark-text { background-color: #333333; }
+.color-swatch.light-bg { background-color: #f4f4f4; }
+
+/* Typography Section */
+.typography-section {
+    margin-top: 20px;
+}
+.font-poppins { font-family: 'Poppins', sans-serif; }
+.font-lato { font-family: 'Lato', sans-serif; }
+.example-heading { font-size: 2em; font-weight: 700; color: #005A9C; }
+.example-paragraph { font-size: 1em; color: #333333; }
+
+/* Wireframe Section */
+.wireframe-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.wireframe {
+    flex: 1;
+    min-width: 300px;
+    border: 2px solid #ccc;
+    padding: 10px;
+}
+.wireframe h3 {
+    text-align: center;
+    margin-top: 0;
+}
+.wireframe-box {
+    border: 2px solid #005A9C;
+    background-color: rgba(0, 90, 156, 0.05);
+    padding: 15px;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+.wireframe-box-inner {
+    border: 1px dashed #333;
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin: 5px;
+}
+.wireframe-columns {
+    display: flex;
+    gap: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777;
+}
