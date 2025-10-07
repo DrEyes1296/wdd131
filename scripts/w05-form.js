@@ -7,6 +7,7 @@ const products = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Populate product options
     const productSelect = document.getElementById('productName');
     if (productSelect) {
         products.forEach(product => {
@@ -17,11 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Footer last modified date
     const lastModifiedSpan = document.getElementById('lastModified');
     if (lastModifiedSpan) {
         lastModifiedSpan.textContent = document.lastModified;
     }
 
+    // Footer copyright year
     const currentYearSpan = document.getElementById('currentYear');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
