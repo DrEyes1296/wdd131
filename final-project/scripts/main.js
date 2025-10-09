@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- 1. HAMBURGER MENU FUNCTIONALITY ---
+    // Toggles the mobile navigation when the hamburger icon is clicked
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const mainNav = document.querySelector('.main-nav');
 
@@ -10,50 +10,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-
-    // --- 2. CONTACT FORM FUNCTIONALITY ---
     const contactForm = document.querySelector('#contact-form');
     const formConfirmation = document.querySelector('#form-confirmation');
 
-    // Function to handle the form submission
+    // This function runs when the user submits the contact form
     function handleFormSubmit(event) {
-        // Prevent the default form submission which reloads the page
-        event.preventDefault(); 
+        event.preventDefault(); // Stops the page from reloading on submit
 
-        // Get the company name value from the form input
-        const companyNameInput = document.querySelector('#company-name');
-        const companyName = companyNameInput.value;
+        // Grab all the checked services and put them into an array
+        const selectedServices = [];
+        const checkedBoxes = document.querySelectorAll('input[name="service"]:checked');
+        checkedBoxes.forEach(function(checkbox) {
+            selectedServices.push(checkbox.value);
+        });
 
-        // Create a confirmation message using a template literal
+        const companyName = document.querySelector('#company-name').value;
         const successMessage = `Thank you, ${companyName}! Your request for an estimate has been received. We will contact you within one business day.`;
 
-        // Display the success message on the page
+        // Show the "Thank you" message on the page
         if (formConfirmation) {
             formConfirmation.textContent = successMessage;
             formConfirmation.style.display = 'block';
         }
 
-        // Use localStorage to 'remember' that the form was submitted
+        // Save a note in the browser so we remember the form was sent
         localStorage.setItem('formSubmitted', 'true');
 
-        // Optional: Reset the form after submission
         contactForm.reset();
     }
 
-    // Add the event listener to the form if it exists on the page
     if (contactForm) {
         contactForm.addEventListener('submit', handleFormSubmit);
     }
 
-
-    // --- 3. LOCALSTORAGE "WELCOME BACK" FUNCTIONALITY ---
-    // This is a simple example of using the data saved in localStorage
+    // If we find our note from a previous visit, show a welcome back message
     const formSubmitted = localStorage.getItem('formSubmitted');
-    
-    // If the 'formSubmitted' item exists in localStorage, show a welcome back message
     if (formSubmitted === 'true' && formConfirmation) {
         formConfirmation.textContent = "Welcome back! You have previously submitted an estimate request.";
         formConfirmation.style.display = 'block';
     }
-
 });
